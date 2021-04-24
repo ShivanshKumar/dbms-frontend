@@ -1,0 +1,25 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.home__avatar{
+    width: 200px !important;
+    height: 200px !important;
+    cursor: pointer;
+}
+
+.home__buttons{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+}
+
+.home__buttons__link{
+    text-decoration: none;
+    color: white;
+}

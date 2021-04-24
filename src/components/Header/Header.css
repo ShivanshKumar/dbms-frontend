@@ -1,0 +1,13 @@
+.header{
+    /* background-color: #3F51B5; */
+    display: flex;
+    justify-content: space-around;
+    font-family: Roboto;
+    font-weight: 800;
+    padding: 20px;
+    box-shadow: 0 0 5px 2px rgb(0 0 0 / 33%);
+}
+.header__link{
+    text-decoration: none;
+    color: black;
+}

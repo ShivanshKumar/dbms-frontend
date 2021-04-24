@@ -1,0 +1,19 @@
+.createAccount{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+.createAccount>div{
+    width: 50%;
+    display: inline-flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.createAccount>button{
+    width: 30%;
+}
