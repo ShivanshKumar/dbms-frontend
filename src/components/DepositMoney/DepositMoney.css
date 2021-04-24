@@ -1,0 +1,18 @@
+.deposit{
+    margin: 30px;
+}
+
+.deposit__title{
+    font-family: Roboto;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.deposit__balance{
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+.deposit__input{
+    margin: 10px 10px 10px 0;
+}

@@ -11,7 +11,7 @@ class Auth extends React.Component{
         password:'',
         flag:1,
         signIn: {
-            name: '',
+            email: '',
             password: ''
         }
     }
@@ -54,10 +54,10 @@ class Auth extends React.Component{
              })
     }
 
-    onSignInNameChangeHandler = (e) => {
+    onSignInEmailChangeHandler = (e) => {
         this.setState({
           signIn:{
-                name: e.target.value,
+                email: e.target.value,
                 password: this.state.signIn.password
             }
         })
@@ -66,12 +66,22 @@ class Auth extends React.Component{
     onSignInPasswordChangeHandler = (e) => {
             this.setState({
               signIn:{
-                  name: this.state.signIn.name,
+                  email: this.state.signIn.email,
                   password:e.target.value}
             })
         }
     onSignInHandler = () =>{
         console.log(this.state);
+        const signInData = {
+            Email: this.state.signIn.email,
+            password: this.state.signIn.password
+        }
+        console.log(signInData);
+        axios.post('https://bank-management-system-dbms.herokuapp.com/login',signInData)
+        .then(response=>{
+            console.log(response);
+            this.props.onLogin(response.data.token);
+         })
     }
 
     render(){
@@ -92,7 +102,7 @@ class Auth extends React.Component{
             </div>
             :
             <div className="auth__signin">
-                <Input className="auth__signin__input" onChange={this.onSignInNameChangeHandler} type="text" placeholder="Name "/>
+                <Input className="auth__signin__input" onChange={this.onSignInEmailChangeHandler} type="text" placeholder="Email"/>
                 <Input className="auth__signin__input" onChange={this.onSignInPasswordChangeHandler} type="password" placeholder="Password"/>
                 <Button variant="contained" color="primary" className="auth__signin__submit" onClick={this.onSignInHandler} type="button">Sign In</Button>
             </div>

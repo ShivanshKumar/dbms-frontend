@@ -75,7 +75,10 @@ class CreateAccount extends React.Component{
                 headers:{
                     'Authorization':`${this.props.Token}`
                 }
-            }).then(data=>{console.log(data)}).catch(err=>console.log(err));
+            }).then(data=>{
+                console.log(data)
+                this.props.onCreateAccount()
+            }).catch(err=>console.log(err));
 
         }).catch(err=>console.log(err));
     }

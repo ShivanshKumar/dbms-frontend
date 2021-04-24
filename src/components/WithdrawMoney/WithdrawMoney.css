@@ -1,0 +1,18 @@
+.withdraw{
+    margin: 30px;
+}
+
+.withdraw__title{
+    font-family: Roboto;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.withdraw__balance{
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+.withdraw__input{
+    margin: 10px 10px 10px 0;
+}

@@ -10,7 +10,9 @@ class Home extends React.Component{
         <>
         <Header/>
         <div className="home">
-            <Avatar className="home__avatar" src="/broken-image.jpg" />
+            <NavLink to = "/profile" >
+                <Avatar className="home__avatar" src="/broken-image.jpg"/>
+            </NavLink>
             <div className="home__buttons">
             <Button variant="contained" color="primary" type="button">
                 <NavLink to = "/deposit_money" className="home__buttons__link">DEPOSIT MONEY</NavLink>
