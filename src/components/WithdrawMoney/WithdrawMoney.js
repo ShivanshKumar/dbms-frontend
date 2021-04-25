@@ -79,7 +79,7 @@ class WithdrawMoney extends React.Component{
     render(){
         return(
         <>
-            <Header/>
+            <Header onLogout={this.props.onLogout}/>
             <div className="withdraw">
                 <div className="withdraw__title">Withdraw Money</div>
                 <div className="withdraw__balance">Your Balance is {this.state.balance}</div>

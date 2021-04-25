@@ -79,7 +79,7 @@ class DepositMoney extends React.Component{
     render(){
         return(
         <>
-            <Header/>
+            <Header onLogout={this.props.onLogout}/>
             <div className="deposit">
                 <div className="deposit__title">Deposit Money</div>
                 <div className="deposit__balance">Your Balance is {this.state.balance}</div>

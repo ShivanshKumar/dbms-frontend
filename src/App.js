@@ -25,7 +25,7 @@ class App extends React.Component{
         token: t,
         accountExists: false
       },
-      ()=>{ localStorage.setItem( 'token', (this.state.token) ) }
+      ()=>{ localStorage.setItem( 'token', (this.state.token) ); console.log(this.state); }
     )
   }
 
@@ -38,6 +38,18 @@ class App extends React.Component{
       },
       ()=>{ localStorage.setItem( 'token', (this.state.token) ) }
     )
+  }
+
+  onLogout = ()=>{
+    this.setState(
+      {
+        auth: false,
+        token: '',
+        accountExists: true
+      }
+    )
+    localStorage.clear();
+    this.props.history.push('/');
   }
 
 
@@ -58,7 +70,7 @@ class App extends React.Component{
         <Route path="/home">{
           this.state.auth?
             (this.state.accountExists?
-              <Home Token={this.state.token}/>
+              <Home Token={this.state.token} onLogout={this.onLogout}/>
               :
               <CreateAccount Token= {this.state.token} onCreateAccount={this.onCreateAccount}/>
             )
@@ -67,10 +79,10 @@ class App extends React.Component{
           }
         </Route>
 
-        <Route path='/deposit_money' render={(props)=><DepositMoney {...props} Token={this.state.token}/>}/>
-        <Route path='/withdraw_money' render={(props)=><WithdrawMoney {...props} Token={this.state.token}/>}/>
-        <Route path='/money_transfer' render={(props)=><MoneyTransfer {...props} Token={this.state.token}/>}/>
-        <Route path='/profile' render={(props)=><Profile {...props} Token={this.state.token}/>}/>
+        <Route path='/deposit_money' render={(props)=><DepositMoney {...props} Token={this.state.token}c/>}/>
+        <Route path='/withdraw_money' render={(props)=><WithdrawMoney {...props} Token={this.state.token} onLogout={this.onLogout}/>}/>
+        <Route path='/money_transfer' render={(props)=><MoneyTransfer {...props} Token={this.state.token} onLogout={this.onLogout}/>}/>
+        <Route path='/profile' render={(props)=><Profile {...props} Token={this.state.token} onLogout={this.onLogout}/>}/>
       </Router>
     );
   }

@@ -8,7 +8,7 @@ class Home extends React.Component{
     render(){
         return(
         <>
-        <Header/>
+        <Header onLogout={this.props.onLogout}/>
         <div className="home">
             <NavLink to = "/profile" >
                 <Avatar className="home__avatar" src="/broken-image.jpg"/>

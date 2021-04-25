@@ -86,7 +86,7 @@ class MoneyTransfer extends React.Component{
     render(){
         return(
         <>
-            <Header/>
+            <Header onLogout={this.props.onLogout}/>
             <div className="money_transfer">
                 <div className="money_transfer__title">Transfer Money</div>
                 <div className="money_transfer__balance">Your Balance is {this.state.balance}</div>

@@ -10,6 +10,7 @@ class Header extends React.Component{
             <NavLink to = "/deposit_money" className="header__link">DEPOSIT MONEY</NavLink>
             <NavLink to = "/withdraw_money" className="header__link">WITHDRAW MONEY</NavLink>
             <NavLink to = "/money_transfer" className="header__link">MONEY TRANSFER</NavLink>
+            <div className="header__logout" onClick={()=>{this.props.onLogout()}}>LOGOUT</div>
         </div>
         );
     }

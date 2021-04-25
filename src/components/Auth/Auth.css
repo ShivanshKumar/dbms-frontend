@@ -13,7 +13,7 @@ div::after {
     content: "";
     background-image: url(../../assets/bank.jpg);
     background-size: cover;
-    opacity: 0.25;
+    opacity: 0.1;
     top: 0;
     left: 0;
     bottom: 0;
